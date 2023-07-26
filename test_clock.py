@@ -1,4 +1,4 @@
-from clock import Clock
+from clock import Clock, TwelveHourClock
 
 def test_clock_ticks():
   clock1 = Clock(0, 0, 0)
@@ -25,3 +25,11 @@ def test_wrapping_minutes():
   for _ in range(60):
     clock1.tick()
   assert str(clock1) == "13:00:00"
+
+def test_12_hour_clock():
+  clock1 = TwelveHourClock(12, 59, 59)
+  clock1.tick()
+  assert str(clock1) == "01:00:00 AM"
+  clock1 = TwelveHourClock(11, 59, 59, True)
+  clock1.tick()
+  assert str(clock1) == "12:00:00 PM"
