@@ -28,9 +28,3 @@ class Clock():
 class TwelveHourClock(Clock):
   ...
 
-if __name__ == '__main__':
-  clock = Clock(0, 0, 0)
-  while True:
-    clock.tick()
-    print(clock)
-    sleep(1000)
