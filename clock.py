@@ -8,13 +8,22 @@ The class should have methods to:
 '''
 class Clock():
   def __init__(self, hours = 0, minutes = 0, seconds = 0):
-    ...
+    self.hours = hours
+    self.minutes = minutes
+    self.seconds = seconds
 
   def tick(self):
-    ...
+    self.seconds += 1
+    if self.seconds > 60:
+     self.minutes += 1
+    if self.minutes > 60:
+     self.hours += 1
+    self.seconds %= 60
+    self.minutes %= 60
+    self.hours %= 24
 
   def __str__(self):
-    ...
+    return f"{0 if self.hours < 10}{self.hours}:{0 if self.minutes < 10}{self.minutes}:{0 if self.seconds < 10}{self.seconds}"
 
 class TwelveHourClock(Clock):
   ...
