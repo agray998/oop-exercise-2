@@ -23,7 +23,7 @@ class Clock():
     self.hours %= 24
 
   def __str__(self):
-    return f"{0 if self.hours < 10}{self.hours}:{0 if self.minutes < 10}{self.minutes}:{0 if self.seconds < 10}{self.seconds}"
+    return f"{'0' if self.hours < 10 else ''}{self.hours}:{'0' if self.minutes < 10 else ''}{self.minutes}:{'0' if self.seconds < 10 else ''}{self.seconds}"
 
 class TwelveHourClock(Clock):
   ...
