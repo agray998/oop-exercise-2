@@ -14,9 +14,9 @@ class Clock():
 
   def tick(self):
     self.seconds += 1
-    if self.seconds > 60:
+    if self.seconds == 60:
      self.minutes += 1
-    if self.minutes > 60:
+    if self.minutes == 60:
      self.hours += 1
     self.seconds %= 60
     self.minutes %= 60
